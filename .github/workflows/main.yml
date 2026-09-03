@@ -46,14 +46,14 @@ jobs:
           path: dist/DesktopPlanner/
           if-no-files-found: error
 
-      - name: Install Inno Setup 7
+      - name: Install Inno Setup
         run: |
-          winget install --id JRSoftware.InnoSetup.7 -e --silent --accept-package-agreements --accept-source-agreements
+          choco install innosetup -y --no-progress
         shell: pwsh
 
       - name: Build installer with Inno Setup
         run: |
-          & "C:\Program Files\Inno Setup 7\ISCC.exe" "installer\installer.iss"
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "installer\installer.iss"
         shell: pwsh
 
       - name: Upload installer artifact
