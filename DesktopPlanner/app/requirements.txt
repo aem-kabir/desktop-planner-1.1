@@ -1,0 +1,4 @@
+PyQt6==6.7.1
+gspread==6.1.4
+google-auth==2.35.0
+win11toast==0.35; sys_platform == "win32"
